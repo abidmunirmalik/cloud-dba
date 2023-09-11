@@ -1,15 +1,5 @@
 ## CONFIGURE MYSQL SERVER ON DEBIAN SYSTEM
 
-### DISABLE MYSQL INIT SCRIPT
-```
-mv /etc/init.d/mysql ~
-```
-
-### MANAGE MYSQL SERVICE UNDER SYSTEMD
-```
-systemctl status mysql.service
-```
-
 ### CREATE CUSTOM DIRECTORY FOR MYSQL CONFIGURATION
 ```
 mkdir /etc/mysql/gdp
@@ -31,4 +21,9 @@ vim /etc/mysql/my.cnf
 rm -f /etc/mysql/debian-start && rm -f /etc/mysql/debian.cnf
 rm -f /etc/mysql/my.cnf.fallback && rm -f /etc/mysql/mysql.cnf
 rm -rf /etc/mysql/conf.d && rm -rf /etc/mysql/mysql.conf.d
+```
+
+### RESTART MYSQL SERVICE TO VERIFY
+```
+systemctl restart mysql.service
 ```
